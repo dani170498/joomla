@@ -1,0 +1,59 @@
+id: joomla-plugins-detector
+
+info:
+  name: Joomla version plugins listing
+  author: daniel
+  severity: info
+  tags: joomla
+  metadata:
+    max-request: 2
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/plugins/content/confirmconsent/confirmconsent.xml'
+      - '{{BaseURL}}/plugins/content/contact/contact.xml'
+      - '{{BaseURL}}/plugins/content/emailcloak/emailcloak.xml'
+      - '{{BaseURL}}/plugins/content/fields/fields.xml'
+      - '{{BaseURL}}/plugins/content/finder/finder.xml'
+      - '{{BaseURL}}/plugins/content/joomla/joomla.xml'
+      - '{{BaseURL}}/plugins/content/loadmodule/loadmodule.xml'
+      - '{{BaseURL}}/plugins/content/nicepage/nicepage.xml'
+      - '{{BaseURL}}/plugins/content/pagebreak/pagebreak.xml'
+      - '{{BaseURL}}/plugins/content/pagenavigation/pagenavigation.xml'
+      - '{{BaseURL}}/plugins/content/vote/vote.xml'
+      - '{{BaseURL}}/plugins/content/jw_ts/jw_ts.xml'
+      - '{{BaseURL}}/plugins/content/sppagebuilder/sppagebuilder.xml'
+      - '{{BaseURL}}/plugins/content/pdf_embed/pdf_embed.xml'
+      - '{{BaseURL}}/plugins/content/responsive-tables/responsive-tables.xml'
+      - '{{BaseURL}}/plugins/content/quix/quix.xml'
+      - '{{BaseURL}}/plugins/content/jw_sig/jw_sig.xml'
+      - '{{BaseURL}}/plugins/content/social2s/social2s.xml'
+
+    matchers-condition: or
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "<version>"
+        condition: and
+      - type: word
+        part: body
+        words:
+          - "<name>"
+    extractors:
+      - type: regex
+        name: version
+        group: 1
+        regex:
+          - "(?i)<version>(.*)</version>"
+        part: body
+      - type: regex
+        name: name
+        group: 1
+        regex:
+          - "(?i)<name>(.*)</name>"
+        part: body

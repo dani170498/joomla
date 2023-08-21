@@ -1,0 +1,29 @@
+id: joomla-config-dist-file
+
+info:
+  name: joomla configuracion
+  author: daniel
+  severity: low
+  description: Joomla deteccion de archivo de configuracion.
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/configuration.php-dist"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Joomla"
+          - "JConfig"
+          - "@package"
+        condition: and
+
+      - type: word
+        words:
+          - "text/plain"
+        part: header
+
+      - type: status
+        status:
+          - 200

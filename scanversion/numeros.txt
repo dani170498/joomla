@@ -1,0 +1,18 @@
+Content - SP Page Builder - 30
+plg_content_vote - 102
+plg_content_pagenavigation - 102
+plg_content_pagebreak - 102
+plg_content_loadmodule -102
+plg_content_joomla -102
+plg_content_finder - 101
+Simple Image Gallery (by JoomlaWorks) - 3
+plg_content_confirmconsent - 76
+plg_content_emailcloak - 102
+plg_content_fields - 79
+Content - Quix Content Plugin - 5 
+plg_content_contact - 93
+JW - 3
+pdf_embed - 2
+Responsive Tables - 1
+PLG_CONTENT_NICEPAGE - 2
+Content - Social 2s - 2

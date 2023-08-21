@@ -1,0 +1,28 @@
+id: joomla-manifest-archivo
+
+info:
+  name: Archivo manifest para joomla
+  author: dani1704
+  severity: low
+  description: Archivo que contiene algunas configuraciones de joomla
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/administrator/manifests/files/joomla.xml"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "admin@joomla.org"
+          - "www.joomla.org"
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - "application/xml"
+
+      - type: status
+        status:
+          - 200

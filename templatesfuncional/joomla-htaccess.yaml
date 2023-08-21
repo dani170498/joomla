@@ -1,0 +1,28 @@
+id: joomla-htaccess
+
+info:
+  name: Joomla deteccion de archivo htaccess
+  author: daniel
+  severity: info
+  description: Joomla deteccion de archivo htaccess
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/htaccess.txt"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Joomla"
+          - "Open Source Matters. All rights reserved"
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - "text/plain"
+
+      - type: status
+        status:
+          - 200

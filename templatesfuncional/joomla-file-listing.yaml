@@ -1,0 +1,23 @@
+id: joomla-file-listing
+
+info:
+  name: Joomla backup database listing
+  author: daniel
+  severity: low
+  description: deteccion de backup de base de datos
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/libraries/joomla/database/"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Index of /libraries/joomla/database"
+          - "Parent Directory"
+        condition: and
+
+      - type: status
+        status:
+          - 200

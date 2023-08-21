@@ -1,0 +1,31 @@
+id: joomla-version-detector
+
+info:
+  name: Detector de version de Joomla
+  author: daniel
+  severity: info
+  tags: joomla
+  metadata:
+    max-request: 2
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/language/en-GB/en-GB.xml'
+    matchers-condition: or
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "<version>"
+        condition: and
+    extractors:
+      - type: regex
+        name: version
+        group: 1
+        regex:
+          - "(?i)<version>(.*)</version>"
+        part: body

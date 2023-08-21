@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #3A435E;
+    color: #f5f5f5;
+    
+}
+
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+    color: #f5f5f5;
+}
+
+/* barra de navegacion */
+
+nav{
+    width: 60%;
+    border: none;
+    border-radius: 10px;
+    margin: 80px auto;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: #455561;
+    
+}
+
+.elementosnav{
+    align-items: space-between;
+    padding: 10px;
+    color: #f5f5f5;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+.elementosnav:hover{
+    background-color: #5C6672;
+    color: #f5f5f5;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: 300;
+}
+/* tabla */
+
+
+table{
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+}
+.tabla-container{
+    display: none;
+
+}
+
+.tabla-container:target{
+    display: block;
+}
+
+
+.titulo__tabla{
+    font-size: 20px;
+    padding: 10px;
+    color: #f5f5f5;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+table thead tr th{
+    padding: 10px;
+    color: #f5f5f5;
+    border-bottom: #f5f5f5 5px solid;
+}
+
+.num{
+    width: 5%;
+    border:none;
+    
+    
+}
+tr td{
+    padding: 10px;
+
+}
+
+.urls {
+    width: 50%;
+    border:none;
+    color: #f5f5f5;
+    text-decoration: none;
+
+}
+
+.urls:hover{
+    padding: 5px;
+    color: #f5f5f5;
+    background-color: #4D5B67;
+    border-radius: 5px;
+    transition: 0.6s;
+}
